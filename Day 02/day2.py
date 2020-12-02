@@ -11,8 +11,8 @@ for line in lines:
 
     # pull the minimum required number and the maximum required number
     minmax = bits[0]
-    min = int(minmax[0])
-    max = int(minmax[-1])
+    minval = int(minmax[0])
+    maxval = int(minmax[-1])
 
     # pull the required character
     reqchar = bits[1]
@@ -25,7 +25,7 @@ for line in lines:
     count = password.count(char)
 
     # if the count is correct (between min and max), increment the overall counter
-    if min <= count <= max:
+    if minval <= count <= maxval:
         goodpass += 1
 
 print(f"The number of good passwords is {goodpass}.")
