@@ -2,11 +2,14 @@
 data = open("data.txt")
 lines = data.readlines()
 
-# set up a counter
-goodpass = 0
+# set up some counters
+goodpass1 = 0
+goodpass2 = 0
 
-# split each item in lines into an array of its component pieces
+# iterate through the lines file
 for line in lines:
+
+    # split each item in lines into an array of its component pieces
     bits = line.split()
 
     # pull the minimum required number and the maximum required number
@@ -28,7 +31,14 @@ for line in lines:
 
     # if the count is correct (between min and max), increment the overall counter
     if minval <= count <= maxval:
-        goodpass += 1
+        goodpass1 += 1
 
-print(f"The number of good passwords is {goodpass}.")
+    # notes: need to -1 from place values because they're starting from 1
+    # notes: need to handle case where maxval > length of string
+
+print(f"The number of Part 1 good passwords is {goodpass1}.")
+
+
+
+
 
