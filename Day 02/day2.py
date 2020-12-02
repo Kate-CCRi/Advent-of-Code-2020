@@ -10,7 +10,9 @@ for line in lines:
     bits = line.split()
 
     # pull the minimum required number and the maximum required number
-    minmax = bits[0]
+    # note that you have to do it with "split" because just pulling the character by index reference doesn't work for
+    # two-character numbers
+    minmax = bits[0].split("-")
     minval = int(minmax[0])
     maxval = int(minmax[-1])
 
