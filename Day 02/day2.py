@@ -20,8 +20,7 @@ for line in lines:
     maxval = int(minmax[-1])
 
     # pull the required character
-    reqchar = bits[1]
-    char = reqchar[0]
+    char = bits[1][0]
 
     # define the password
     password = bits[-1]
@@ -33,9 +32,25 @@ for line in lines:
     if minval <= count <= maxval:
         goodpass1 += 1
 
-    # notes: need to -1 from place values because they're starting from 1
     # notes: need to handle case where maxval > length of string
 
+    # Python counts from 0, the problem wants me to count from 1
+    minpos = minval - 1
+    maxpos = maxval - 1
+
+    # check to make sure you're still within the word, then check for "only one instance of the character in either
+    # position" per the instructions
+    if minpos < len(password) and password[minpos] == char:
+        if maxpos > len(password):
+            goodpass2 += 1
+        elif maxpos < len(password) and password[maxpos] != char:
+            goodpass2 +=1
+    else:
+        if maxpos < len (password) and password[maxpos] == char:
+            goodpass2 += 1
+
+
+print(f"The number of Part 2 good passwords is {goodpass2}.")
 print(f"The number of Part 1 good passwords is {goodpass1}.")
 
 
