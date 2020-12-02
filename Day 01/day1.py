@@ -2,11 +2,12 @@
 import itertools
 
 # read in the data file and split it into lines
-data = open("test.txt")
+data = open("data.txt")
 lines = data.readlines()
 
 # PART ONE
 
+# Use itertools to compare all possible combinations of two numbers in the list of input data
 for num1, num2 in itertools.combinations(lines, 2):
     sum = int(num1) + int(num2)
 
