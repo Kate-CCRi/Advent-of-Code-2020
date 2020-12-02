@@ -11,8 +11,6 @@ lines = data.readlines()
 num1 = int(lines.pop())
 num2 = 0
 
-print(f"{num1}")
-
 for line in lines:
     num2 = int(line)
 
@@ -21,6 +19,6 @@ for line in lines:
 
 product = num1 * num2
 
-# print(f"The first number is {num1}")
-# print(f"The second number is {num2}")
-# print(f"Their product is {product}")
+print(f"The first number is {num1}")
+print(f"The second number is {num2}")
+print(f"Their product is {product}")
