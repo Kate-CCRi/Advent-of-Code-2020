@@ -13,15 +13,15 @@ linesize = len(lines[0]) - 1
 
 for line in lines:
 
-# If we wrap around the end of the line, start again at the beginning
+    # If we wrap around the end of the line, start again at the beginning
     if xpos >= linesize:
         xpos = xpos - linesize
 
-# If you hit a tree, increment the tree counter
+    # If you hit a tree, increment the tree counter
     if line[xpos] == "#":
         trees += 1
 
-# Do the moves
+    # Do the moves
     xpos += 3
     ypos += 1
 
